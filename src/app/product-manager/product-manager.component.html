@@ -1,0 +1,48 @@
+<button (click)="them()">Insert Product</button>
+<form *ngIf="new" action="" method="post" role="form">
+  <!--<div class="form-group">
+    <label for="">ID</label>
+    <input [(ngModel)]="new.id" [ngModelOptions]="{standalone: true}" value="{{new.id}}" type="number" class="form-control"  placeholder="Input...">
+  </div>-->
+
+  <div class="form-group">
+    <label for="">NAME</label>
+    <input [(ngModel)]="new.name" [ngModelOptions]="{standalone: true}" value="{{new.name}}" type="text" class="form-control"  placeholder="Input...">
+  </div>
+  <div class="form-group">
+    <label for="">PRICE</label>
+    <input [(ngModel)]="new.price" [ngModelOptions]="{standalone: true}" value="{{new.price}}" type="text" class="form-control" placeholder="Input...">
+  </div>
+  <button (click)="luu()">Save</button>
+</form>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>PRICE</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let product of data">
+  <tr>
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td><button (click)="getid(product)" type="button" class="btn btn-primary">Update</button></td>
+    <td><button (click)="deleteproduct(product)" type="button" class="btn btn-primary">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+<form *ngIf="edit" action="" method="post" role="form">
+  <legend>ID : {{edit.id}}</legend>
+
+ <div class="form-group">
+    <label for="">NAME</label>
+    <input [(ngModel)]="edit.name" [ngModelOptions]="{standalone: true}" value="{{edit.name}}" type="text" class="form-control"  placeholder="Input...">
+  </div>
+  <div class="form-group">
+    <label for="">PRICE</label>
+    <input [(ngModel)]="edit.price" [ngModelOptions]="{standalone: true}" value="{{edit.price}}" type="text" class="form-control" placeholder="Input...">
+  </div>
+  <button (click)="thoat()">Exit</button>
+</form>

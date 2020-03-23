@@ -1,0 +1,64 @@
+<!--<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>PRICE</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let product of data">
+  <tr>
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td><button (click)="xem(product)" type="button" class="btn btn-primary">Update</button></td>
+    <td><button (click)="xoasp(product)" type="button" class="btn btn-primary">Delete</button></td>
+  </tr>
+  </tbody>
+</table>-->
+
+
+<!--<form *ngIf="prodetail" action="" method="post" role="form">
+  <legend>ID : {{pr.id}}</legend>
+
+  <div class="form-group">
+    <label for="">NAME</label>
+    <input [(ngModel)]="prodetail.name" [ngModelOptions]="{standalone: true}" value="{{prodetail.name}}" type="text" class="form-control"  placeholder="Input...">
+  </div>
+  <div class="form-group">
+    <label for="">PRICE</label>
+    <input [(ngModel)]="prodetail.price" [ngModelOptions]="{standalone: true}" value="{{prodetail.price}}" type="text" class="form-control" placeholder="Input...">
+  </div>
+  <button (click)="thoat()">Exit</button>
+</form>-->
+
+
+
+<app-slide></app-slide>
+<div class="row">
+<!--  <app-product [ngClass]="{'col-lg-4 col-md-6 mb-4' : true}"></app-product>
+  <app-product [ngClass]="{'col-lg-4 col-md-6 mb-4' : true}"></app-product>
+  <app-product [ngClass]="{'col-lg-4 col-md-6 mb-4' : true}"></app-product>
+  <app-product [ngClass]="{'col-lg-4 col-md-6 mb-4' : true}"></app-product>
+  <app-product [ngClass]="{'col-lg-4 col-md-6 mb-4' : true}"></app-product>-->
+
+
+<div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of data">
+  <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="#">{{product.name}}</a>
+      </h4>
+      <h5>${{product.price}}</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    </div>
+  </div>
+</div>
+
+
+
+</div>

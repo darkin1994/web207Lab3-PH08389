@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from '../Product';
 // @ts-ignore
 import {ProductServiceService} from '../Service/product-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-manager',
@@ -17,7 +18,7 @@ export class ProductManagerComponent implements OnInit {
   private service: ProductServiceService;
 
   // tslint:disable-next-line:variable-name
-  constructor(private _service: ProductServiceService) {
+  constructor(private _service: ProductServiceService, private router: Router) {
     this.service = _service;
   }
 
@@ -46,5 +47,10 @@ export class ProductManagerComponent implements OnInit {
   luu(): void {
     this._service.insertProduct(this.new);
     this.new=null;
+  }
+  detail(id: number): void {
+    // @ts-ignore
+    this.router.navigate(['/Detail',id])
+
   }
 }
